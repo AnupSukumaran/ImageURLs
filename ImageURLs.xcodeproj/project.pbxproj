@@ -20,6 +20,7 @@
 		9D2C7A7B23F197C3007ACB01 /* ImageViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C7A7A23F197C3007ACB01 /* ImageViewContainer.swift */; };
 		9D2C7A7D23F19850007ACB01 /* RemoteImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C7A7C23F19850007ACB01 /* RemoteImageURL.swift */; };
 		9D654F8423F27805003E4E65 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D654F8323F27805003E4E65 /* URLImage */; };
+		9DFBD62323F2ACDB003CD5E9 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBD62223F2ACDB003CD5E9 /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		9D2C7A7823F196A5007ACB01 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
 		9D2C7A7A23F197C3007ACB01 /* ImageViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewContainer.swift; sourceTree = "<group>"; };
 		9D2C7A7C23F19850007ACB01 /* RemoteImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageURL.swift; sourceTree = "<group>"; };
+		9DFBD62223F2ACDB003CD5E9 /* ActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				9D2C7A7823F196A5007ACB01 /* ImageRow.swift */,
 				9D2C7A7A23F197C3007ACB01 /* ImageViewContainer.swift */,
 				9D2C7A7C23F19850007ACB01 /* RemoteImageURL.swift */,
+				9DFBD62223F2ACDB003CD5E9 /* ActivityIndicator.swift */,
 			);
 			path = ImageURLs;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				9D2C7A4623F19201007ACB01 /* AppDelegate.swift in Sources */,
 				9D2C7A4823F19201007ACB01 /* SceneDelegate.swift in Sources */,
 				9D2C7A4A23F19201007ACB01 /* ContentView.swift in Sources */,
+				9DFBD62323F2ACDB003CD5E9 /* ActivityIndicator.swift in Sources */,
 				9D2C7A7B23F197C3007ACB01 /* ImageViewContainer.swift in Sources */,
 				9D2C7A7D23F19850007ACB01 /* RemoteImageURL.swift in Sources */,
 				9D2C7A7723F19227007ACB01 /* Model.swift in Sources */,
