@@ -38,7 +38,7 @@ struct ImageViewContainer: View {
     var body: some View {
         
             HStack {
-                ZStack {
+               // ZStack {
 //                    ActivityIndicator(shouldAnimate: self.$shouldAnimate, style: .medium)
 //                                       .frame(width: 150, height: 150, alignment: .center)
                     
@@ -49,11 +49,10 @@ struct ImageViewContainer: View {
                     .clipped()
                         .overlay( ActivityIndicator(shouldAnimate: self.$shouldAnimate, style: .large)
                         .frame(width: 150, height: 150, alignment: .center)
-                        .clipped()
-                        .padding(.all, 12.0)
+                            //.offset(x: 150/2, y: 150/2)
                     )
                         
-                }.frame(width: 150, height: 150)
+                //}.frame(width: 150, height: 150)
                
                 
                  
