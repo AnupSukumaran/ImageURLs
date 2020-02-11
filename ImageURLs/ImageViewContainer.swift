@@ -47,8 +47,12 @@ struct ImageViewContainer: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 150, height: 150)
                     .clipped()
-                    .overlay( ActivityIndicator(shouldAnimate: self.$shouldAnimate, style: .medium))
+                        .overlay( ActivityIndicator(shouldAnimate: self.$shouldAnimate, style: .large)
                         .frame(width: 150, height: 150, alignment: .center)
+                        .clipped()
+                        .padding(.all, 12.0)
+                    )
+                        
                 }.frame(width: 150, height: 150)
                
                 
