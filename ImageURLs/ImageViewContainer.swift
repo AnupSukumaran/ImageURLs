@@ -13,7 +13,7 @@ import UIKit
 struct ImageViewContainer: View {
     
     @ObservedObject var remoteImageURL: RemoteImageURL
-  //  @State var image:UIImage = UIImage()
+    @State var image:UIImage = UIImage()
     
     init(imageURL: String) {
         print("imageURL2 = \(imageURL)")
@@ -27,7 +27,7 @@ struct ImageViewContainer: View {
             
             
             
-            Image(uiImage: remoteImageURL.downloadedImage != nil ? remoteImageURL.downloadedImage! : UIImage())
+            Image(uiImage: remoteImageURL.data != nil ? UIImage(data:remoteImageURL.data!)! : UIImage())
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width:100, height:100)
@@ -60,8 +60,8 @@ struct ImageViewContainer: View {
 //    }
 }
 
-struct ImageViewContainer_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageViewContainer(imageURL: "https://homepages.cae.wisc.edu/~ece533/images/watch.png")
-    }
-}
+//struct ImageViewContainer_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ImageViewContainer(imageURL: "https://homepages.cae.wisc.edu/~ece533/images/watch.png")
+//    }
+//}

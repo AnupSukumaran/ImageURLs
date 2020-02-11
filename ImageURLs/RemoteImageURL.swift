@@ -19,11 +19,7 @@ class RemoteImageURL: ObservableObject {
 //        }
 //    }
     
-   // @Published var data: Data?
-    
-    @Published var downloadedImage: UIImage?
-    let didChange = PassthroughSubject<RemoteImageURL?, Never>()
-    
+    @Published var data: Data?
     
     init(imageURL: String) {
         
@@ -32,21 +28,10 @@ class RemoteImageURL: ObservableObject {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
         
-            //guard let data = data else {return}
-            guard let data = data, error == nil else {
-               DispatchQueue.main.async {
-                    self.didChange.send(nil)
-               }
-                return
-            }
+            guard let data = data else {return}
             
-//            DispatchQueue.main.async {
-//                self.data = data
-//            }
-            
-            self.downloadedImage = UIImage(data: data)
             DispatchQueue.main.async {
-                self.didChange.send(self)
+                self.data = data
             }
         }.resume()
     }

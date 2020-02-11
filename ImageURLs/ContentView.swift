@@ -12,6 +12,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             
+            
+            
             List(imageURLArray) { model in
                 
                 ImageRow(model: model).onAppear {
