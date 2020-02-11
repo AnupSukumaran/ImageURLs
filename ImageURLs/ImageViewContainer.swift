@@ -23,14 +23,19 @@ struct ImageViewContainer: View {
     
     var body: some View {
         
-        VStack {
-            Image(uiImage:image)
-            .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 250, height: 250)
-        }.onReceive(remoteImageURL.didChange) { data in
-            self.image = UIImage(data: data) ?? UIImage()
-        }
+        
+            HStack {
+                Image(uiImage:image)
+                .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 150, height: 150)
+                    .clipped()
+            }.onReceive(remoteImageURL.didChange) { data in
+                self.image = UIImage(data: data) ?? UIImage()
+            }
+        
+        
+        
     
     }
 
