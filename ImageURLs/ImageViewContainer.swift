@@ -14,6 +14,7 @@ struct ImageViewContainer: View {
     
     @ObservedObject var remoteImageURL: RemoteImageURL
     @State var image:UIImage = UIImage()
+    @State private var shouldAnimate = false
     
     init(imageURL: String) {
         print("imageURL2 = \(imageURL)")
@@ -21,22 +22,43 @@ struct ImageViewContainer: View {
         remoteImageURL = RemoteImageURL(imageURL: imageURL)
     }
     
+//     var stateContent: AnyView {
+//           if let image = UIImage(data: remoteImageURL.data) {
+//               return AnyView( Image(uiImage: image)
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .frame(width: 150, height: 150)
+//                .clipped()
+//            )
+//           } else {
+//               return AnyView( ActivityIndicator(style: .medium) )
+//           }
+//       }
+    
     var body: some View {
         
-        
             HStack {
-                Image(uiImage:image)
-                .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 150, height: 150)
-                    .clipped()
+                ZStack {
+                    ActivityIndicator(shouldAnimate: self.$shouldAnimate, style: .medium)
+                                       .frame(width: 150, height: 150, alignment: .center)
+                    
+                    Image(uiImage:image)
+                    .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 150, height: 150)
+                        .clipped()
+                }.frame(width: 150, height: 150)
+               
+                
+                 
+               // self.shouldAnimate = !self.shouldAnimate
             }.onReceive(remoteImageURL.didChange) { data in
+                self.shouldAnimate = false
                 self.image = UIImage(data: data) ?? UIImage()
-            }
+            }.onAppear {
+                self.shouldAnimate = true
+        }
         
-        
-        
-    
     }
 
 }

@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ActivityIndicator: UIViewRepresentable {
+    
+    @Binding var shouldAnimate: Bool
+    
     let style: UIActivityIndicatorView.Style
     
     func makeUIView(context: UIViewRepresentableContext<ActivityIndicator>) -> UIActivityIndicatorView {
@@ -16,6 +19,14 @@ struct ActivityIndicator: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<ActivityIndicator>) {
-        uiView.startAnimating()
+//        uiView.startAnimating()
+        
+        self.shouldAnimate ? uiView.startAnimating() : uiView.stopAnimating()
+        
+//        if self.shouldAnimate {
+//            uiView.startAnimating()
+//        } else {
+//            uiView.stopAnimating()
+//        }
     }
 }

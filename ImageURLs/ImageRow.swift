@@ -11,15 +11,23 @@ import URLImage
 
 struct ImageRow: View {
     let model: Model
+    @State private var shouldAnimate = false
     
     var body: some View {
-        VStack(alignment: .center) {
+        HStack(alignment: .center, spacing: 10) {
+           Spacer()
+    
+           ActivityIndicator(shouldAnimate: self.$shouldAnimate, style: .medium)
+            
+         //  ImageViewContainer(imageURL: model.imageURL)
           //  Text("imageURL = \(model.imageURL)")
-           ImageViewContainer(imageURL: model.imageURL)
     
         }.onAppear {
+            self.shouldAnimate = true
             self.testPrint()
         }
+    .padding()
+        
     }
     
     func testPrint() {
@@ -30,5 +38,6 @@ struct ImageRow: View {
 struct ImageRow_Previews: PreviewProvider {
     static var previews: some View {
         ImageRow(model: Model(id: 0, imageURL: "https://homepages.cae.wisc.edu/~ece533/images/watch.png"))
+            .previewLayout(.fixed(width: 300, height: 70))
     }
 }
