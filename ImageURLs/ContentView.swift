@@ -34,13 +34,10 @@ struct ContentView: View {
             
             List(imageURLArray) { model in
 
-                ImageRow(model: model).onAppear {
-                    print("model.imageURL = \(model.imageURL)")
-
-                }
+                ImageRow(model: model)
             }
         }
-        .navigationBarTitle(Text("Load Remote Images"))
+       
         
     }
 }
