@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,11 @@
 		9D2C7A5223F19203007ACB01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D2C7A5023F19203007ACB01 /* LaunchScreen.storyboard */; };
 		9D2C7A5D23F19203007ACB01 /* ImageURLsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C7A5C23F19203007ACB01 /* ImageURLsTests.swift */; };
 		9D2C7A6823F19203007ACB01 /* ImageURLsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C7A6723F19203007ACB01 /* ImageURLsUITests.swift */; };
+		9D2C7A7723F19227007ACB01 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C7A7623F19227007ACB01 /* Model.swift */; };
+		9D2C7A7923F196A5007ACB01 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C7A7823F196A5007ACB01 /* ImageRow.swift */; };
+		9D2C7A7B23F197C3007ACB01 /* ImageViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C7A7A23F197C3007ACB01 /* ImageViewContainer.swift */; };
+		9D2C7A7D23F19850007ACB01 /* RemoteImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2C7A7C23F19850007ACB01 /* RemoteImageURL.swift */; };
+		9D654F8423F27805003E4E65 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D654F8323F27805003E4E65 /* URLImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,10 @@
 		9D2C7A6323F19203007ACB01 /* ImageURLsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageURLsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D2C7A6723F19203007ACB01 /* ImageURLsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLsUITests.swift; sourceTree = "<group>"; };
 		9D2C7A6923F19203007ACB01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D2C7A7623F19227007ACB01 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		9D2C7A7823F196A5007ACB01 /* ImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
+		9D2C7A7A23F197C3007ACB01 /* ImageViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewContainer.swift; sourceTree = "<group>"; };
+		9D2C7A7C23F19850007ACB01 /* RemoteImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D654F8423F27805003E4E65 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +109,7 @@
 		9D2C7A4423F19201007ACB01 /* ImageURLs */ = {
 			isa = PBXGroup;
 			children = (
+				9D2C7A7523F19211007ACB01 /* Model */,
 				9D2C7A4523F19201007ACB01 /* AppDelegate.swift */,
 				9D2C7A4723F19201007ACB01 /* SceneDelegate.swift */,
 				9D2C7A4923F19201007ACB01 /* ContentView.swift */,
@@ -106,6 +117,9 @@
 				9D2C7A5023F19203007ACB01 /* LaunchScreen.storyboard */,
 				9D2C7A5323F19203007ACB01 /* Info.plist */,
 				9D2C7A4D23F19203007ACB01 /* Preview Content */,
+				9D2C7A7823F196A5007ACB01 /* ImageRow.swift */,
+				9D2C7A7A23F197C3007ACB01 /* ImageViewContainer.swift */,
+				9D2C7A7C23F19850007ACB01 /* RemoteImageURL.swift */,
 			);
 			path = ImageURLs;
 			sourceTree = "<group>";
@@ -136,6 +150,14 @@
 			path = ImageURLsUITests;
 			sourceTree = "<group>";
 		};
+		9D2C7A7523F19211007ACB01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9D2C7A7623F19227007ACB01 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +174,9 @@
 			dependencies = (
 			);
 			name = ImageURLs;
+			packageProductDependencies = (
+				9D654F8323F27805003E4E65 /* URLImage */,
+			);
 			productName = ImageURLs;
 			productReference = 9D2C7A4223F19201007ACB01 /* ImageURLs.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +249,9 @@
 				Base,
 			);
 			mainGroup = 9D2C7A3923F19201007ACB01;
+			packageReferences = (
+				9D654F8223F27805003E4E65 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 9D2C7A4323F19201007ACB01 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -267,9 +295,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D2C7A7923F196A5007ACB01 /* ImageRow.swift in Sources */,
 				9D2C7A4623F19201007ACB01 /* AppDelegate.swift in Sources */,
 				9D2C7A4823F19201007ACB01 /* SceneDelegate.swift in Sources */,
 				9D2C7A4A23F19201007ACB01 /* ContentView.swift in Sources */,
+				9D2C7A7B23F197C3007ACB01 /* ImageViewContainer.swift in Sources */,
+				9D2C7A7D23F19850007ACB01 /* RemoteImageURL.swift in Sources */,
+				9D2C7A7723F19227007ACB01 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +626,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9D654F8223F27805003E4E65 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9D654F8323F27805003E4E65 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D654F8223F27805003E4E65 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9D2C7A3A23F19201007ACB01 /* Project object */;
 }
