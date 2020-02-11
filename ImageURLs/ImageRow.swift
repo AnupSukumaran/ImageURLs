@@ -11,22 +11,18 @@ import URLImage
 
 struct ImageRow: View {
     let model: Model
-    @State private var shouldAnimate = false
+    
     
     var body: some View {
-        HStack(alignment: .center, spacing: 10) {
-           Spacer()
+        HStack() {
     
-           ActivityIndicator(shouldAnimate: self.$shouldAnimate, style: .medium)
-            
-         //  ImageViewContainer(imageURL: model.imageURL)
+           ImageViewContainer(imageURL: model.imageURL)
           //  Text("imageURL = \(model.imageURL)")
     
         }.onAppear {
-            self.shouldAnimate = true
             self.testPrint()
         }
-    .padding()
+
         
     }
     

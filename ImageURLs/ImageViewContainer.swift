@@ -39,14 +39,16 @@ struct ImageViewContainer: View {
         
             HStack {
                 ZStack {
-                    ActivityIndicator(shouldAnimate: self.$shouldAnimate, style: .medium)
-                                       .frame(width: 150, height: 150, alignment: .center)
+//                    ActivityIndicator(shouldAnimate: self.$shouldAnimate, style: .medium)
+//                                       .frame(width: 150, height: 150, alignment: .center)
                     
                     Image(uiImage:image)
                     .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 150, height: 150)
-                        .clipped()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 150, height: 150)
+                    .clipped()
+                    .overlay( ActivityIndicator(shouldAnimate: self.$shouldAnimate, style: .medium))
+                        .frame(width: 150, height: 150, alignment: .center)
                 }.frame(width: 150, height: 150)
                
                 
