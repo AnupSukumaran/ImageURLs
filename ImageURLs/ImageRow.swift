@@ -15,13 +15,8 @@ struct ImageRow: View {
     var body: some View {
         VStack(alignment: .center) {
           //  Text("imageURL = \(model.imageURL)")
-           // ImageViewContainer(imageURL: model.imageURL)
-            
-            URLImage(URL(string: model.imageURL)!, delay: 0.25) {proxy in
-                proxy.image.resizable()
-                    .frame(width: UIScreen.main.bounds.height/8*3, height: UIScreen.main.bounds.height/2)
-            }
-            
+           ImageViewContainer(imageURL: model.imageURL)
+    
         }.onAppear {
             self.testPrint()
         }

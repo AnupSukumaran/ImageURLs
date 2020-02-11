@@ -10,16 +10,13 @@ import SwiftUI
 import Combine
 
 class RemoteImageURL: ObservableObject {
-    
-//    var didChange = PassthroughSubject<Data, Never>()
-//    
-//    var data = Data() {
-//        didSet {
-//            didChange.send(data)
-//        }
-//    }
-    
-    @Published var data: Data?
+
+    var didChange = PassthroughSubject<Data, Never>()
+    var data = Data() {
+        didSet {
+            didChange.send(data)
+        }
+    }
     
     init(imageURL: String) {
         
@@ -37,8 +34,3 @@ class RemoteImageURL: ObservableObject {
     }
 }
 
-//struct RemoteImageURL_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RemoteImageURL()
-//    }
-//}

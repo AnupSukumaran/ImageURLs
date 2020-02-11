@@ -24,44 +24,20 @@ struct ImageViewContainer: View {
     var body: some View {
         
         VStack {
-            
-            
-            
-            Image(uiImage: remoteImageURL.data != nil ? UIImage(data:remoteImageURL.data!)! : UIImage())
-                .resizable()
+            Image(uiImage:image)
+            .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width:100, height:100)
-                .onAppear {
-                
-            }
+                .frame(width: 250, height: 250)
+        }.onReceive(remoteImageURL.didChange) { data in
+            self.image = UIImage(data: data) ?? UIImage()
         }
-        
-//        VStack {
-//            Image(uiImage:image)
-//            .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: 250, height: 250)
-//        }.onReceive(remoteImageURL.didChange) { data in
-//            self.image = UIImage(data: data) ?? UIImage()
-//        }
-        
-     
-//        Image(uiImage: (remoteImageURL.data.isEmpty) ? UIImage(imageLiteralResourceName: "chilkoottrail"): UIImage(data: remoteImageURL.data)!)
-//        .resizable()
-//            .aspectRatio(contentMode: .fit)
-//            .frame(width: 250, height: 250)
-//            .onAppear {
-//                self.testPrint()
-//        }
-    }
     
-//    func testPrint() {
-//        print("remoteImageURL.data.isEmpty = \(remoteImageURL.data.isEmpty)")
-//    }
+    }
+
 }
 
-//struct ImageViewContainer_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ImageViewContainer(imageURL: "https://homepages.cae.wisc.edu/~ece533/images/watch.png")
-//    }
-//}
+struct ImageViewContainer_Previews: PreviewProvider {
+    static var previews: some View {
+        ImageViewContainer(imageURL: "https://homepages.cae.wisc.edu/~ece533/images/watch.png")
+    }
+}
