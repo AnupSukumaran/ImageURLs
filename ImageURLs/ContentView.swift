@@ -15,27 +15,27 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             
-//            VStack {
-//                ActivityIndicator(shouldAnimate: self.$shouldAnimate, style: .medium)
-//
-//                Button(action: {
-//
-//                     self.shouldAnimate = !self.shouldAnimate
-//
-//                }, label: {
-//                    Text("Stop/Start")
-//                    .foregroundColor(Color.white)
-//                    .padding()
-//                })
-//
-//                .background(Color.green)
-//                .cornerRadius(5)
-//            }
             
             List(imageURLArray) { model in
 
                 ImageRow(model: model)
             }
+            
+//            List {
+//
+//                ImageRow(model: imageURLArray[0])
+//                ImageRow(model: imageURLArray[1])
+//                ImageRow(model: imageURLArray[2])
+//                ImageRow(model: imageURLArray[3])
+//                ImageRow(model: imageURLArray[4])
+//                ImageRow(model: imageURLArray[5])
+//                ImageRow(model: imageURLArray[6])
+//                ImageRow(model: imageURLArray[7])
+//                ImageRow(model: imageURLArray[8])
+//                ImageRow(model: imageURLArray[9])
+////                ImageRow(model: imageURLArray[10])
+////                ImageRow(model: imageURLArray[11])
+//            }
         }
        
         
